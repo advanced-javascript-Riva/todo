@@ -1,12 +1,12 @@
-
 import './App.css';
+import TodoForm from './Components/FormComponent';
 
-function App() {
+const App = () => {
   return (
 
     <div className="App">
       <header className="App-header">
-          Todo
+         Todo List
       </header>
     </div>
   );
