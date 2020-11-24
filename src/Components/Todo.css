@@ -1,0 +1,9 @@
+.itemsToComplete {
+    display: flex;
+    flex-direction: row;
+    background-color: gray;
+    color: whitesmoke;
+    text-align: left;
+    font-size: 30px;
+    border: 2px solid gray;
+}
