@@ -3,7 +3,11 @@
 
 ## Author: Riva Davidowski
 
-### An application designed for creating and organizing a “To Do” list in your browser
+### A 4-phase build of the To Do List Manager, a web-based task manager application  written in React
+
+**Phase1:**
+
+In this first phase, my goal is to setup a foundational system using React hooks that I can build upon in later phases. Initially written with class based components and no proper styles, phase 1 requires a refactor of the application using Hooks and upgrading the style.
 
 #### Usability: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
 
