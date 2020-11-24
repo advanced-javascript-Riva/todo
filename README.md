@@ -13,15 +13,13 @@
 - To create a React application, run `npx create-react-app` (name of project here, all lowercase)
 - To install it globally, run `npm install -g create-react-app`
 - Install react-bootstrap for Form and Listgroup Components: `npm i --save react-bootstrap bootstrap`
-- On App.js or Index.js import bootstrap: `import 'bootstrap/dist/css/bootstrap.min.css';
+- On App.js or Index.js import bootstrap: `import 'bootstrap/dist/css/bootstrap.min.css`;
 
 
 #### UML:
 
 
 **Getting Started with Create React App**
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
