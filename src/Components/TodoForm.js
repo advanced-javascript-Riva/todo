@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-const TodoForm = props => {
-
-  
-    this.state = { item: {}};
-
-  handleInputChange = e => {
+const TodoForm = () => {
+  const [input, setInput] = useState(' ');
+  const handleInputChange = e => {
     this.setState({ item: {...this.state.item, [e.target.name]: e.target.value } });
   };
 
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     e.target.reset();
     this.props.handleSubmit(this.state.item);
@@ -18,8 +16,8 @@ const TodoForm = props => {
     this.setState({item});
   }
   
-  render() {
     return (
+      
   <Form>
             <fieldset disabled>
     <Form.Group>
@@ -43,6 +41,5 @@ const TodoForm = props => {
  </Form>
     );
   }
-}
 
 export default TodoForm;

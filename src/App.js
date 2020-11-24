@@ -5,10 +5,12 @@ import TodoList from './Components/TodoList';
 
 
 const App = () => {
-  const [ input, setInput ] = useState("");
+  const [ input, setInput ] = useState(' ');
+
   return (
-    <div className="App">
-      
+    <div>
+      <TodoForm/>
+      <TodoList/>
     </div>
   );
 }
