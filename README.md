@@ -1,15 +1,17 @@
 
-# todo : An application designed for creating and organizing a “To Do” list in your browser
+# todo 
 
 ## Author: Riva Davidowski
 
-Usability: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
+### An application designed for creating and organizing a “To Do” list in your browser
+
+#### Usability: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
+
+#### Dependencies:
 
 - This project was bootstrapped with Create React App. 
 - To create a React application, run `npx create-react-app` (name of project here, all lowercase)
 - To install it globally, run `npm install -g create-react-app`
-
-**Additional Dependencies used:**
 - Install react-bootstrap for Form and Listgroup Components: `npm i --save react-bootstrap bootstrap`
 - On App.js or Index.js import bootstrap: `import 'bootstrap/dist/css/bootstrap.min.css';
 
