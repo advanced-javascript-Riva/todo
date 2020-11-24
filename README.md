@@ -3,11 +3,16 @@
 
 ## Author: Riva Davidowski
 
-### A 4-phase build of the To Do List Manager, a web-based task manager application  written in React
+### A To Do List Manager which is a web-based task manager application written in React. It also uses Axios for Ajax requests and  was styled with React-Bootstrap.
 
 **Phase1:**
 
 In this first phase, my goal is to setup a foundational system using React hooks that I can build upon in later phases. Initially written with class based components and no proper styles, phase 1 requires a refactor of the application using Hooks and upgrading the style.
+
+**Phase2:**
+
+In Phase 2, I have to connect the To Do Manager to a deployed API backed by a database. The core functionality doesn't change but I have to implement POST, PUT and DELETE methods.
+I will also be creating custom Hooks for the Form logic as well as one for making Ajax requests using Axios.
 
 #### Usability: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
 
@@ -18,7 +23,7 @@ In this first phase, my goal is to setup a foundational system using React hooks
 - To install it globally, run `npm install -g create-react-app`
 - Install react-bootstrap for Form and Listgroup Components: `npm i --save react-bootstrap bootstrap`
 - On App.js or Index.js import bootstrap: `import 'bootstrap/dist/css/bootstrap.min.css`;
-
+- Install Axios for Ajax requests: `npm i axios` and then import by using `import axios from 'axios'`
 
 #### UML:
 
