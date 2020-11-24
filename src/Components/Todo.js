@@ -1,6 +1,7 @@
 import React, { useState , useEffect } from 'react';
 import TodoForm from './TodoForm.js';
 import TodoList from './TodoList';
+import '../Components/Todo.css';
 
 const ToDo = () => {
   const [list, setList] = useState([]);
@@ -37,9 +38,9 @@ const ToDo = () => {
     return (
       <>
         <header>
-          <h2>
+          <div className="itemsToComplete">
           There are {list.filter(item => !item.complete).length} Items To Complete
-          </h2>
+          </div>
         </header>
         <section className="todo">
           <div>
