@@ -2,23 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../Components/TodoForm.css'
+import useForm from '../useFormHook';
+const TodoForm = () => {
 
-const TodoForm = props => {
-  const [item, setItem] = useState('');
+    const { values, handleChange, handleSubmit } = useForm();
 
-  const handleInputChange = e => {
-    setItem({...item, [e.target.name]: e.target.value } );
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    props.handleSubmit(item);
-    const newitem = {};
-    setItem(newitem);
-  }
   return ( 
-    <Form className="TodoForm">
+    <Form className="TodoForm" onSubmit={handleSubmit}>
       <fieldset>
         <Form.Group>
           <div className="titleTodos"> Add To Do Item</div>
@@ -36,7 +26,7 @@ const TodoForm = props => {
         <Button type="submit">Add Item</Button>
       </fieldset>
     </Form>
-    );
-  }
+  );
+}
 
 export default TodoForm;
