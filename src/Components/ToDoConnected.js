@@ -6,7 +6,6 @@ const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
 
 const ToDoConnected = () => {
-
   const [list, setList] = useState([]);
 
   const _addItem = (item) => {

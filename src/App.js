@@ -1,8 +1,7 @@
-
+import './App.css';
 import React, { useState } from 'react';
-import TodoForm from './Components/TodoForm';
-import TodoList from './Components/TodoList';
-import ToDoConnected from './Components/ToDoConnected';
+import Todo from './Components/Todo';
+
 
 const App = () => {
   const [ input, countInput ] = useState(0);
@@ -10,10 +9,11 @@ const App = () => {
   return (
     <div className="App">
       <div className="App-header">
-        To Do List Manager 
+        <div>Home </div>
       </div>
-      <TodoForm/>
-      <TodoList/>
+      <div className="formAndTodo">
+      <Todo/>
+      </div>
     </div>
   );
 }

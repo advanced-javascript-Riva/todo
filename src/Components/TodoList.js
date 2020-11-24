@@ -3,17 +3,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ListGroup from 'react-bootstrap/ListGroup';
 import '../Components/TodoList.css';
 
-const TodoList = () => {
-
+const TodoList = props => {
+  const todoItems = props.list.map(item => {
+    const variant = item.complete ? 'success' : 'danger';
+    return (
+      // Creating listGroup.item for each item in the Todo list
+      <ListGroup.Item variant={ variant }> { item.text }</ListGroup.Item>
+    )
+  })
     return (
       <ListGroup className="listGroup">
-          <ListGroup.Item variant="success">Clean the bedroom</ListGroup.Item>
-          <ListGroup.Item variant="success">Do the laundry and fold it</ListGroup.Item>
-          <ListGroup.Item variant="danger">Play with the cat</ListGroup.Item>
-         <ListGroup.Item variant="success">Call the electric companu</ListGroup.Item>
+          {todoItems}
       </ListGroup>
     );
-  }
-
-
+}
 export default TodoList;
