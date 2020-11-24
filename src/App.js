@@ -2,7 +2,6 @@ import './App.css';
 import React, { useState } from 'react';
 import Todo from './Components/Todo';
 
-
 const App = () => {
   const [ input, countInput ] = useState(0);
 
@@ -17,5 +16,4 @@ const App = () => {
     </div>
   );
 }
-
 export default App;

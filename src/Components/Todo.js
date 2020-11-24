@@ -5,7 +5,6 @@ import '../Components/Todo.css';
 
 const ToDo = () => {
   const [list, setList] = useState([]);
-
   const addItem = item => {
     item._id = Math.random();
     item.complete = false;

@@ -3,8 +3,6 @@ import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
 const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
-
-
 const ToDoConnected = () => {
   const [list, setList] = useState([]);
 
@@ -25,13 +23,9 @@ const ToDoConnected = () => {
   };
 
   const _toggleComplete = id => {
-
     let item = list.filter(i => i._id === id)[0] || {};
-
     if (item._id) {
-
       item.complete = !item.complete;
-
       let url = `${todoAPI}/${id}`;
 
       fetch(url, {
@@ -68,13 +62,10 @@ const ToDoConnected = () => {
           There are {list.filter(item => !item.complete).length} Items To Complete
         </h2>
       </header>
-
       <section className="todo">
-
         <div>
           <TodoForm handleSubmit={_addItem} />
         </div>
-
         <div>
           <TodoList
             list={list}
@@ -85,5 +76,4 @@ const ToDoConnected = () => {
     </>
   );
 };
-
 export default ToDoConnected;
