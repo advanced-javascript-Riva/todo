@@ -1,12 +1,11 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 
-const TodoForm = () => {
+const TodoForm = props => {
 
-  constructor(props) {
-    super(props);
+  
     this.state = { item: {}};
-  }
+
   handleInputChange = e => {
     this.setState({ item: {...this.state.item, [e.target.name]: e.target.value } });
   };
@@ -21,7 +20,7 @@ const TodoForm = () => {
   
   render() {
     return (
-    <Form>
+  <Form>
             <fieldset disabled>
     <Form.Group>
       <Form.Label htmlFor="disabledTextInput">Item Details</Form.Label>
@@ -33,16 +32,15 @@ const TodoForm = () => {
         <option>Disabled select</option>
       </Form.Control>
     </Form.Group>
-    <Form.Group>
-      <Form.Check
-        type="checkbox"
-        id="disabledFieldsetCheck"
-        label="Can't check this"
-      />
+    <Form>
+    <Form.Group controlId="formBasicRange">
+    <Form.Label>Range</Form.Label>
+    <Form.Control type="range" />
     </Form.Group>
-    <Button type="submit">Add Item</Button>
-  </fieldset>
-</Form>
+    </Form>
+       <Button type="submit">Add Item</Button>
+         </fieldset>
+ </Form>
     );
   }
 }

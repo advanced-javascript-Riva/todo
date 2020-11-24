@@ -1,13 +1,14 @@
-import './App.css';
-import TodoForm from './Components/FormComponent';
+
+import React, { useState } from 'react';
+import TodoForm from './Components/TodoForm';
+import TodoList from './Components/TodoList';
+
 
 const App = () => {
+  const [ input, setInput ] = useState("");
   return (
-
     <div className="App">
-      <header className="App-header">
-         Todo List
-      </header>
+      
     </div>
   );
 }
