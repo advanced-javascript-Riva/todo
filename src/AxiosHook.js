@@ -1,19 +1,23 @@
 import axios from "axios";
+import { useState } from 'react';
 
 
 const getTodos = async ()=> {
   try {
-    await axios.get('https://jsonplaceholder.typicode.com/todos?_limits=5');
-  } catch {
+    const list = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5');
+    console.log(list);
+    return list.data;
+  } catch (err) {
     console.error(err);
   }
-});
+};
 
+/*
 const [list, setList] = useState([]);
 
-  const _addItem = (item) => {
+  const _addItem = fetchURL => {
     item.due = new Date();
-    fetch(todoAPI, {
+    axios(todoAPI, {
       method: 'post',
       mode: 'cors',
       cache: 'no-cache',
@@ -59,7 +63,7 @@ const [list, setList] = useState([]);
   };
 
   useEffect(_getTodoItems, []);
-
+*/
 
 axios.interceptors.request.use(config => {
   // Do something before request is sent
@@ -80,4 +84,8 @@ axios.interceptors.response.use(response => {
   return Promise.reject(error);
 });
 
+const AxiosHook = {
+  getTodos
+}
 
+export default AxiosHook;

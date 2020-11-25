@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react';
-import Todo from './Components/Todo';
+import TodoConnected from './Components/TodoConnected';
 import Spinner from 'react-bootstrap/Spinner';
 
 const App = () => {
@@ -17,7 +17,7 @@ const App = () => {
           </Spinner>
         </div>
        <div className="formAndTodo">
-         <Todo/>
+         <TodoConnected/>
        </div>
     </div>
   );
