@@ -5,10 +5,10 @@ import '../Components/TodoList.css';
 
 const TodoList = props => {
   const todoItems = props.list.map(item => {
-    const variant = item.complete ? 'success' : 'danger';
+    const variant = item.completed ? 'success' : 'danger';
     return (
       // Creating listGroup.item for each item in the Todo list
-      <ListGroup.Item variant={ variant }> { item.text }</ListGroup.Item>
+      <ListGroup.Item key={ item.id } variant={ variant }> { item.title }</ListGroup.Item>
     )
   })
     return (

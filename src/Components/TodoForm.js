@@ -2,41 +2,33 @@ import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../Components/TodoForm.css'
+import useForm from '../useFormHook';
+import AxiosHook from '../AxiosHook';
 
-const TodoForm = props => {
-  const [item, setItem] = useState('');
+const TodoForm = () => {
+  // using the useForm hook, passing in the callback that the hook will call when something is submitted
+    const { item, handleInputChange, handleSubmit } = useForm(AxiosHook.addItem);
 
-  const handleInputChange = e => {
-    setItem({...item, [e.target.name]: e.target.value } );
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    e.target.reset();
-    props.handleSubmit(item);
-    const newitem = {};
-    setItem(newitem);
-  }
   return ( 
-    <Form className="TodoForm">
+    <Form className="TodoForm" onSubmit={handleSubmit}>
       <fieldset>
         <Form.Group>
           <div className="titleTodos"> Add To Do Item</div>
           <Form.Label>To Do Item</Form.Label>
-          <Form.Control size="sm" id="disabledTextInput" placeholder="Item Details"/>
+          <Form.Control name="text" value={item.text} size="sm" id="disabledTextInput" placeholder="Item Details" onChange={handleInputChange}/>
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="disabledSelect">Assigned To</Form.Label>
-          <Form.Control size="sm" as="select" id="disabledSelect" placeholder="Assignee Name"/>
+          <Form.Control name="assignee" value={item.assignee} size="sm" as="select" id="disabledSelect" placeholder="Assignee Name" onChange={handleInputChange}/>
         </Form.Group>
         <Form.Group controlId="formBasicRange">
           <Form.Label>Range</Form.Label>
-          <Form.Control size="sm" type="range" />
+          <Form.Control name="range" value={item.range} size="sm" type="range" onChange={handleInputChange} />
         </Form.Group>
         <Button type="submit">Add Item</Button>
       </fieldset>
     </Form>
-    );
-  }
+  );
+}
 
 export default TodoForm;
