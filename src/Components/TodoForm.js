@@ -5,7 +5,7 @@ import '../Components/TodoForm.css'
 import useForm from '../useFormHook';
 const TodoForm = () => {
 
-    const { values, handleChange, handleSubmit } = useForm();
+    const { item, handleInputChange, handleSubmit } = useForm();
 
   return ( 
     <Form className="TodoForm" onSubmit={handleSubmit}>
@@ -13,15 +13,15 @@ const TodoForm = () => {
         <Form.Group>
           <div className="titleTodos"> Add To Do Item</div>
           <Form.Label>To Do Item</Form.Label>
-          <Form.Control size="sm" id="disabledTextInput" placeholder="Item Details"/>
+          <Form.Control name="text" value={item.text} size="sm" id="disabledTextInput" placeholder="Item Details" onChange={handleInputChange}/>
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="disabledSelect">Assigned To</Form.Label>
-          <Form.Control size="sm" as="select" id="disabledSelect" placeholder="Assignee Name"/>
+          <Form.Control name="assignee" value={item.assignee} size="sm" as="select" id="disabledSelect" placeholder="Assignee Name" onChange={handleInputChange}/>
         </Form.Group>
         <Form.Group controlId="formBasicRange">
           <Form.Label>Range</Form.Label>
-          <Form.Control size="sm" type="range" />
+          <Form.Control name="range" value={item.range} size="sm" type="range" onChange={handleInputChange} />
         </Form.Group>
         <Button type="submit">Add Item</Button>
       </fieldset>
