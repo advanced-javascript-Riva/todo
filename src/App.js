@@ -11,11 +11,6 @@ const App = () => {
       <div className="App-header">
           <div className="homeTitle">Home </div>
         </div>
-        <div className="spinner">
-          <Spinner animation="border"  variant="primary" role="status">
-          <span className="sr-only">Loading Request</span>
-          </Spinner>
-        </div>
        <div className="formAndTodo">
          <TodoConnected/>
        </div>

@@ -20,10 +20,9 @@
   text-align: left;
   padding-top: 25px;
 }
-.formAndTodo {
-  display:flex;
-  flex-direction: row;
 
+.formAndTodo {
+  padding: 20px;
 }
 
 
