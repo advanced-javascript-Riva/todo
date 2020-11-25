@@ -2,9 +2,10 @@ import axios from "axios";
 import { useState } from 'react';
 
 
+const URL = 'https://jsonplaceholder.typicode.com/todos?_limit=5';
 const getTodos = async ()=> {
   try {
-    const list = await axios.get('https://jsonplaceholder.typicode.com/todos?_limit=5');
+    const list = await axios.get(URL);
     console.log(list);
     return list.data;
   } catch (err) {
@@ -12,25 +13,22 @@ const getTodos = async ()=> {
   }
 };
 
+const addItem =  async item => {
+  const result = await axios(URL, {
+    method: 'post',
+    mode: 'cors',
+    cache: 'no-cache',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(item)
+  })
+  console.log(result);
+  return result;
+};
+
 /*
 const [list, setList] = useState([]);
 
-  const _addItem = fetchURL => {
-    item.due = new Date();
-    axios(todoAPI, {
-      method: 'post',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(item)
-    })
-      .then(response => response.json())
-      .then(savedItem => {
-        setList([...list, savedItem])
-      })
-      .catch(console.error);
-  };
-
+ 
   const _toggleComplete = id => {
     let item = list.filter(i => i._id === id)[0] || {};
     if (item._id) {
@@ -85,7 +83,8 @@ axios.interceptors.response.use(response => {
 });
 
 const AxiosHook = {
-  getTodos
+  getTodos,
+  addItem
 }
 
 export default AxiosHook;

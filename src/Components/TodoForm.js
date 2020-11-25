@@ -3,9 +3,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import '../Components/TodoForm.css'
 import useForm from '../useFormHook';
-const TodoForm = () => {
+import AxiosHook from '../AxiosHook';
 
-    const { item, handleInputChange, handleSubmit } = useForm();
+const TodoForm = () => {
+  // using the useForm hook, passing in the callback that the hook will call when something is submitted
+    const { item, handleInputChange, handleSubmit } = useForm(AxiosHook.addItem);
 
   return ( 
     <Form className="TodoForm" onSubmit={handleSubmit}>

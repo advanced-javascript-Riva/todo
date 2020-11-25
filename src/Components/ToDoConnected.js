@@ -18,12 +18,12 @@ useEffect(() => {
     <>
       <header>
         <h2>
-          To Do List Manager{list.filter(item => !item.complete).length} 
+          To Do List Manager ({list.filter(item => !item.complete).length})
         </h2>
       </header>
       <section className="todo">
         <div>
-          {/* <TodoForm handleSubmit={} /> */}
+          <TodoForm/> 
         </div>
         <div>
           <TodoList

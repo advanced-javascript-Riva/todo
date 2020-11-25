@@ -9,7 +9,7 @@ const useForm = callback => {
         }
         console.log('submitting item', item);
         if (callback) {
-            callback();
+            callback(item);
         }
     };
     const handleInputChange = e => {
