@@ -9,7 +9,7 @@ const App = () => {
   return (
     <div className="App">
       <div className="App-header">
-          <div>Home </div>
+          <div className="homeTitle">Home </div>
         </div>
         <div className="spinner">
           <Spinner animation="border"  variant="primary" role="status">

@@ -13,8 +13,13 @@
   align-items: center;
   color: whitesmoke;
   font-size: calc(10px + 2vmin);
+  height: 80px;
 }
 
+.homeTitle {
+  text-align: left;
+  padding-top: 25px;
+}
 .formAndTodo {
   display:flex;
   flex-direction: row;

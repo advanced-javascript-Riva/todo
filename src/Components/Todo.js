@@ -36,11 +36,11 @@ const ToDo = () => {
   console.log('rendering list', list)
     return (
       <>
-        <header>
+        <div className="todoManagerList">
           <div className="itemsToComplete">
-          There are {list.filter(item => !item.complete).length} Items To Complete
+          To Do List Manager {list.filter(item => !item.complete).length} 
           </div>
-        </header>
+        </div>
         <section className="todo">
           <div>
             <TodoForm handleSubmit={addItem} />

@@ -1,9 +1,14 @@
-.itemsToComplete {
+.todoManagerList {
     display: flex;
     flex-direction: row;
+    min-height: 100vw;
+}
+
+.itemsToComplete {
     background-color: gray;
     color: whitesmoke;
     text-align: left;
     font-size: 30px;
     border: 2px solid gray;
+    width: 100px;
 }
