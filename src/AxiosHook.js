@@ -1,6 +1,4 @@
 import axios from "axios";
-import { useState } from 'react';
-
 
 const instance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com/todos?_limit=5',

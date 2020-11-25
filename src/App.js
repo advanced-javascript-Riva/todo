@@ -1,10 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
 import TodoConnected from './Components/TodoConnected';
-import Spinner from 'react-bootstrap/Spinner';
 
 const App = () => {
-  const [ input, countInput ] = useState(0);
 
   return (
     <div className="App">
