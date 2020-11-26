@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/todos?_limit=5',
+  baseURL: 'https://api-server-rd.herokuapp.com/todos',
   mode: 'cors',
   cache: 'no-cache',
-  headers: { 'Content-Type': 'application/json' },
+headers: { 'Content-Type': 'application/json' , 'Access-Control-Allow-Origin': '*'}
 });
 
 const getTodos = async ()=> {
