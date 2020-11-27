@@ -9,7 +9,10 @@ const [list, setList] = useState([]);
 
 const refreshList = async () => {
   const newList = await AxiosHook.getTodos();
-  setList(newList);
+  const sortList = newList.sort((a, b) => {
+    return b.difficulty - a.difficulty;
+  })
+  setList(sortList);
 }
 useEffect(() => {
   refreshList();
