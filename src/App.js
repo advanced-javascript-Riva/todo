@@ -1,5 +1,6 @@
 import './App.css';
 import TodoConnected from './Components/TodoConnected';
+import { TodoContext } from './TodoContext';
 
 const App = () => {
 
@@ -9,7 +10,9 @@ const App = () => {
           <div className="homeTitle">Home </div>
         </div>
        <div className="formAndTodo">
+         <TodoContext.Provider value="difficulty"> 
          <TodoConnected/>
+         </TodoContext.Provider>
        </div>
     </div>
   );

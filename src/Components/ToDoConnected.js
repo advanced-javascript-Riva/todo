@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState , useContext} from 'react';
+import { TodoContext } from '../TodoContext';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 import AxiosHook from '../AxiosHook';
@@ -6,11 +7,18 @@ import './TodoConnected.css';
 
 const ToDoConnected = () => {
 const [list, setList] = useState([]);
+let sortField = useContext(TodoContext);
 
 const refreshList = async () => {
   const newList = await AxiosHook.getTodos();
   const sortList = newList.sort((a, b) => {
-    return b.difficulty - a.difficulty;
+    if(b[sortField] > a[sortField]) {
+      return 1;
+    } else if(a[sortField] > b[sortField]){
+      return -1
+    } else {
+      return 0;
+    }
   })
   setList(sortList);
 }
