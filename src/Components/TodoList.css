@@ -2,6 +2,13 @@
     display: flex;
     flex-direction: column;
     align-items: right;
+    width: 350px;
+}
+
+.listItem {
     border: 1px solid gray;
-    width: 450px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding:20px 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }

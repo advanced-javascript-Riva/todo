@@ -1,6 +1,5 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import ListGroup from 'react-bootstrap/ListGroup';
 import '../Components/TodoList.css';
 
 // List is controlled by todoConnected
@@ -9,13 +8,20 @@ const TodoList = props => {
     const variant = item.completed ? 'success' : 'danger';
     return (
       // Creating listGroup.item for each item in the Todo list
-      <ListGroup.Item key={ item._id } variant={ variant }> { item.description }</ListGroup.Item>
+      <div className="listItem" key={ item._id } variant={ variant }> 
+        <div className="itemAssignee">
+          {item.assignee}
+        </div>
+        <div className="itemDescription">
+          { item.description }
+        </div>
+      </div>
     )
   })
     return (
-      <ListGroup className="listGroup">
+      <div className="listGroup">
           {todoItems}
-      </ListGroup>
+      </div>
     );
 }
 export default TodoList;
