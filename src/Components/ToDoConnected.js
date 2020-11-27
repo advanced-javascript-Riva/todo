@@ -7,14 +7,15 @@ import './TodoConnected.css';
 const ToDoConnected = () => {
 const [list, setList] = useState([]);
 
+const refreshList = async () => {
+  const newList = await AxiosHook.getTodos();
+  setList(newList);
+}
 useEffect(() => {
-  const fetchData = async () => {
-    const newList = await AxiosHook.getTodos();
-    setList(newList);
-  }
-  fetchData();
+  refreshList();
   //useEffect will be called when values change
 }, [])
+
   return (
     <div className="todoManagerList">
       <div className="itemsToComplete">
@@ -22,7 +23,8 @@ useEffect(() => {
       </div>
       <section className="todo">
         <div>
-          <TodoForm/> 
+          {/* When form submits a new item, it will call refreshList function */}
+          <TodoForm refreshList={refreshList}/> 
         </div>
         <div className="todoList">
           <TodoList
