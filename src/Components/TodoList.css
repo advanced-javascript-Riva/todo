@@ -37,6 +37,7 @@
 
 .assigneeBadge {
     padding-right: 15px;
+    cursor: pointer;
 }
 
 .itemDifficulty {
