@@ -12,11 +12,11 @@ const TodoList = props => {
     // Will have prop from parent telling the parent(todoConnected) that it needs to refresh the list
     props.refreshList()
   }
-const completeItem =  async (item) => {
-  item.completed = !item.completed
-  const result = await AxiosHook.updateItem(item);
-  props.refreshList();
-}
+  const completeItem =  async (item) => {
+    item.completed = !item.completed
+    const result = await AxiosHook.updateItem(item);
+    props.refreshList();
+  }
   const todoItems = props.list.map(item => {
     const variant = item.completed ? 'danger' : 'success';
     const statusText = item.completed ? 'completed' : 'pending'
