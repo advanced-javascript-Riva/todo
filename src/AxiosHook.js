@@ -23,13 +23,13 @@ const addItem =  async item => {
 };
 
 const updateItem =  async item => {
-  const result = await instance.put('', item);
+  const result = await instance.put('/' + item._id, item);
   console.log(result);
   return result;
 };
 
 const deleteItem =  async item => {
-  const result = await instance.delete('', item);
+  const result = await instance.delete('/' + item._id);
   console.log(result);
   return result;
 };

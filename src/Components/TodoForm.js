@@ -29,7 +29,7 @@ const { item, handleInputChange, handleSubmit } = useForm(onSubmit);
           <Form.Control name="assignee" value={item.assignee} size="sm"  id="disabledSelect" placeholder="Assignee Name" onChange={handleInputChange}/>
         </Form.Group>
         <Form.Group controlId="formBasicRange">
-          <Form.Label>Range</Form.Label>
+          <Form.Label>Difficulty</Form.Label>
           <Form.Control name="difficulty" value={item.difficulty} size="sm" type="range" onChange={handleInputChange} />
         </Form.Group>
         <Button type="submit">Add Item</Button>

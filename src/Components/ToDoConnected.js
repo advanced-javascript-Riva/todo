@@ -24,10 +24,10 @@ useEffect(() => {
       <section className="todo">
         <div>
           {/* When form submits a new item, it will call refreshList function */}
-          <TodoForm refreshList={refreshList}/> 
+          <TodoForm refreshList={ refreshList }/> 
         </div>
         <div className="todoList">
-          <TodoList
+          <TodoList refreshList={ refreshList }
             list={list}
           />
         </div>

@@ -12,3 +12,34 @@
     padding:20px 10px;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
+.itemAssignee {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    padding-bottom: 10px;
+    font-size: 15px;
+}
+
+.assigneeLeft {
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 15px;
+}
+
+.assigneeRight {
+    cursor: pointer;
+}
+.itemDescription {
+    font-size: 15px;
+}
+
+.assigneeBadge {
+    padding-right: 15px;
+}
+
+.itemDifficulty {
+   text-align: right;
+   font-size: 12px;
+}
