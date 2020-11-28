@@ -7,7 +7,6 @@ import AxiosHook from '../AxiosHook';
 // List is controlled by todoConnected
 const TodoList = props => {
   const onDelete = async (item) => {
-    // Calling addItem function
     const result = await AxiosHook.deleteItem(item);
     // Will have prop from parent telling the parent(todoConnected) that it needs to refresh the list
     props.refreshList()

@@ -29,7 +29,10 @@ In Phase 3, I extend the functionality of the application by potentially allowin
 - On App.js or Index.js import bootstrap: `import 'bootstrap/dist/css/bootstrap.min.css`;
 - Install Axios for Ajax requests: `npm i axios` and then import by using `import axios from 'axios'`
 
+
 #### UML:
+
+![UML](todo-uml.png)
 
 
 **Getting Started with Create React App**
