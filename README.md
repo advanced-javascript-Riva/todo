@@ -3,7 +3,7 @@
 
 ## Author: Riva Davidowski
 
-### A To Do List Manager which is a web-based task manager application written in React. It also uses Axios for Ajax requests and  was styled with React-Bootstrap.
+### A To Do List Manager which is a web-based task manager application written in React. It also uses Axios for Ajax requests and  is styled with React-Bootstrap.
 
 **Phase1:**
 
@@ -14,7 +14,11 @@ In this first phase, my goal is to setup a foundational system using React hooks
 In Phase 2, I have to connect the To Do Manager to a deployed API backed by a database. The core functionality doesn't change but I have to implement POST, PUT and DELETE methods.
 I will also be creating custom Hooks for the Form logic as well as one for making Ajax requests using Axios.
 
-#### Usability: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
+**Phase3:**
+
+In Phase 3, I extend the functionality of the application by potentially allowing users to set a few configuration options to change how the application behaves. By creating a context for managing application settings and providing this at the application level, I can show a certain number of items per screen, hide or show completed items in the list or sort the items based on any of the keys.
+
+## Using the Todo App: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
 
 #### Dependencies:
 
@@ -25,7 +29,10 @@ I will also be creating custom Hooks for the Form logic as well as one for makin
 - On App.js or Index.js import bootstrap: `import 'bootstrap/dist/css/bootstrap.min.css`;
 - Install Axios for Ajax requests: `npm i axios` and then import by using `import axios from 'axios'`
 
+
 #### UML:
+
+![UML](todo-uml.png)
 
 
 **Getting Started with Create React App**

@@ -1,20 +1,54 @@
 import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import ListGroup from 'react-bootstrap/ListGroup';
 import '../Components/TodoList.css';
+import Badge from 'react-bootstrap/Badge'
+import AxiosHook from '../AxiosHook';
 
+// List is controlled by todoConnected
 const TodoList = props => {
+  const onDelete = async (item) => {
+    const result = await AxiosHook.deleteItem(item);
+    // Will have prop from parent telling the parent(todoConnected) that it needs to refresh the list
+    props.refreshList()
+  }
+  const completeItem =  async (item) => {
+    item.completed = !item.completed
+    const result = await AxiosHook.updateItem(item);
+    props.refreshList();
+  }
   const todoItems = props.list.map(item => {
-    const variant = item.completed ? 'success' : 'danger';
+    const variant = item.completed ? 'danger' : 'success';
+    const statusText = item.completed ? 'completed' : 'pending'
+
     return (
       // Creating listGroup.item for each item in the Todo list
-      <ListGroup.Item key={ item.id } variant={ variant }> { item.title }</ListGroup.Item>
+      <div className="listItem" key={ item._id } variant={ variant }> 
+        <div className="itemAssignee">
+          <div className="assigneeLeft">
+          <div className="assigneeBadge" onClick={ () => completeItem(item) }>
+            <Badge variant={ variant }>{ statusText }</Badge>
+          </div>
+          {item.assignee}
+          </div>
+          {/* Calling deleteItem method and passing in item I want deleted */}
+          <div className="assigneeRight" onClick={ () => onDelete(item) }>
+            <b>X</b>
+          </div>
+        </div>
+        <div className="itemDescription">
+          { item.description }
+        </div>
+        <div className="itemDifficulty">
+            Difficulty: {item.difficulty}
+        </div>
+      </div>
     )
   })
-    return (
-      <ListGroup className="listGroup">
-          {todoItems}
-      </ListGroup>
-    );
+  
+  return (
+    <div className="listGroup">
+        {todoItems}
+    </div>
+  );
 }
 export default TodoList;

@@ -1,10 +1,10 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com/todos?_limit=5',
+  baseURL: 'https://api-server-rd.herokuapp.com/todos',
   mode: 'cors',
   cache: 'no-cache',
-  headers: { 'Content-Type': 'application/json' },
+headers: { 'Content-Type': 'application/json' , 'Access-Control-Allow-Origin': '*'}
 });
 
 const getTodos = async ()=> {
@@ -23,13 +23,13 @@ const addItem =  async item => {
 };
 
 const updateItem =  async item => {
-  const result = await instance.put('', item);
+  const result = await instance.put('/' + item._id, item);
   console.log(result);
   return result;
 };
 
 const deleteItem =  async item => {
-  const result = await instance.delete('', item);
+  const result = await instance.delete('/' + item._id);
   console.log(result);
   return result;
 };

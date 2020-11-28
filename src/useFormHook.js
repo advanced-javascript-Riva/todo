@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const useForm = callback => {
-    const [item, setItem] = useState({ text: '', assignee: '', range: 0 });
+    const [item, setItem] = useState({ text: '', assignee: '', difficulty: 0 });
     const handleSubmit = e => {
         if (e) {
             e.preventDefault() 
