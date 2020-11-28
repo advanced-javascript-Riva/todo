@@ -18,7 +18,7 @@ I will also be creating custom Hooks for the Form logic as well as one for makin
 
 In Phase 3, I extend the functionality of the application by potentially allowing users to set a few configuration options to change how the application behaves. By creating a context for managing application settings and providing this at the application level, I can show a certain number of items per screen, hide or show completed items in the list or sort the items based on any of the keys.
 
-## Using the Todo App: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
+### Using the Todo App: To use the todo app, clone the repo and do an `npm i`. This will install create-react-app and all other dependencies needed for the project to run. Make sure you have Node.js installed and as listed below, to start the app, run `npm start` in the project directory.
 
 #### Dependencies:
 
